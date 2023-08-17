@@ -3,7 +3,8 @@ import json
 
 app = Flask(__name__)
 
-@app.route('/upload', methods=['POST'])
+
+@app.route('/', methods=['POST'])
 def ajouter_ids_dans_json():
     try:
         if 'file' not in request.files:
@@ -27,6 +28,6 @@ def ajouter_ids_dans_json():
     except Exception as e:
         return jsonify({'error': f'Une erreur s\'est produite : {e}'})
 
-    
+
 if __name__ == '__main__':
     app.run(debug=True)
